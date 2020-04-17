@@ -1,4 +1,11 @@
 @import 'modules/reset';
-@import 'modules/color';
+@import 'modules/mixin';
+@import 'modules/footer';
 @import 'reservations/index';
 
+* {
+  box-sizing: border-box;
+  font-feature-settings: "palt";
+  font-family: 'TsukuARdGothic-Regular',sans-serif;
+  outline: none;
+}

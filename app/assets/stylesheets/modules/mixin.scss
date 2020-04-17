@@ -1,0 +1,18 @@
+@mixin rsWrapper($height: 25%, $display: flex, $text-align: center) {
+  height: $height;
+  display: $display;
+  text-align: $text-align;
+}
+
+@mixin rsBlocks($width: 50%, $display: flex, $align-items: center, $border: 1px solid black) {
+  width: $width;
+  display: $display;
+  align-items: $align-items;
+  border: $border;
+}
+
+@mixin rsA($color: black, $text-decoration: none, $margin: auto) {
+  color: $color;
+  text-decoration: $text-decoration;
+  margin: $margin;
+}

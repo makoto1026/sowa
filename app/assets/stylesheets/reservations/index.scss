@@ -1,0 +1,48 @@
+@media screen and (max-width: 375px) {
+  .rsMain {
+    height: calc(100vh - 60px);
+    font-size: 30px;
+    font-weight: 600;
+    &__topWrapper {
+      @include rsWrapper();
+      background-color: skyblue;
+      &__left, &__right {
+        @include rsBlocks();
+        a {
+          @include rsA();
+          display: block;
+        }
+      }
+    }
+    &__secondWrapper {
+      @include rsWrapper();
+      background-color: orange;
+      &__left, &__right {
+        @include rsBlocks();
+        a {
+          @include rsA();
+        }
+      }
+    }
+    &__thirdWrapper {
+      @include rsWrapper();
+      background-color: pink;
+      &__left, &__right {
+        @include rsBlocks();
+        a {
+          @include rsA();
+        }
+      }
+    }
+    &__fourthWrapper {
+      @include rsWrapper();
+      background-color: lightgreen;
+      &__left, &__right {
+        @include rsBlocks();
+        a {
+          @include rsA();
+        }
+      }
+    }
+  }
+}
