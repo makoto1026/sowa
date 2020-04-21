@@ -1,0 +1,33 @@
+.userEdit {
+  #formBox {
+    @include formBox();
+  }
+  &__head {
+    @include head();
+  }
+  &__main {
+    height: calc(100vh - 120px);
+    padding: 30px;
+    &__btn {
+      height: 30px;
+      width: 50%;
+      background-color: skyblue;
+      text-align: center;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
+    #delete {
+      margin: 30px 26% 15px; 
+      color: red;
+    }
+    #back {
+      color: blue;
+    }
+    &__logout {
+      float: right;
+      a {
+        color: blue;
+      }
+    }
+  }
+}

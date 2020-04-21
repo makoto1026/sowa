@@ -1,17 +1,26 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render "devise/shared/error_messages", resource: resource
+
+.userSignMain
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = devise_error_messages!
+    .userSign
+      .userSign__head
+        = render "devise/shared/links"
+        %p ログイン
+
+      .userSign__email
+        %p#text メールアドレス
+        %p#mark 必須
+      = f.email_field :email, placeholder: " メールアドレス", id: "emailForm", required: true
+      .userSign__pwForm
+        %p#text パスワード
+        %p#mark 必須
+      = f.password_field :password, autocomplete: "off", placeholder: " パスワード（７文字以上）", id: "pwForm", required: true, minlength: '7', maxlength: '30'
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me, "ログイン状態を記憶する"
+      .userSign__success
+        = f.submit "ログインする", id: "sendBtn"
+
+

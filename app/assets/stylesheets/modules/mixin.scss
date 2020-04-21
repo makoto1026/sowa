@@ -4,7 +4,7 @@
   text-align: $text-align;
 }
 
-@mixin rsBlocks($width: 50%, $display: flex, $align-items: center, $border: 1px solid black) {
+@mixin rsBlocks($width: 50%, $display: flex, $align-items: center, $border: 1px solid gray) {
   width: $width;
   display: $display;
   align-items: $align-items;
@@ -15,4 +15,51 @@
   color: $color;
   text-decoration: $text-decoration;
   margin: $margin;
+}
+
+@mixin usreWrapper($padding: 40px) {
+  border-bottom: 2px solid #f8f8f8;
+  padding: $padding;
+}
+
+@mixin formBox($height: 50px, $margin-bottom: 20px, $width: 100%) {
+  height: $height;
+  width: $width;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid lightgray; 
+  margin-bottom: $margin-bottom;
+  padding: 10px;
+}
+
+@mixin janle($padding: 15px 0, $font-weight: 600) {
+  padding: $padding;
+  font-weight: $font-weight;
+  display: flex;
+}
+
+@mixin dFlex($display: flex, $justify-content: center) {
+  display: $display;
+  justify-content: $justify-content;
+}
+
+@mixin mark() {
+  height: 20px;
+  background-color: red;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  border-radius: 3px;
+  padding: 0 3px;
+  margin: auto 0;
+  margin-left: 10px;
+}
+
+@mixin head($height: 60px, $line-height: 60px, $border-bottom: 1px solid gray, $text-align: center, $font-size: 20px, $font-weight: 400) {
+  height: $height;
+  line-height: $line-height;
+  border-bottom: $border-bottom;
+  text-align: $text-align;
+  font-size: $font-size;
+  font-weight: $font-weight;
 }
