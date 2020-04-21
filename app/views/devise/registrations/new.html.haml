@@ -1,21 +1,77 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+= render "devise/shared/error_messages", resource: resource
+
+.userSignUpMain
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .userSignUp
+      .userSignUp__head
+        = render "devise/shared/links"
+        %p 会員情報入力
+
+      .userSignUp__fullname
+        %p#text お名前
+        %p#mark 必須
+      = f.text_field :first_name, autofocus: true, id: "firstnameForm", placeholder: "例）田中", required: true
+      = f.text_field :last_name, autofocus: true, id: "lastnameForm", placeholder: "例）太郎", required: true
+      .userSignUp__fullname-yomi
+        %p#text お名前かな
+        %p#mark 必須
+      = f.text_field :first_name_yomi, autofocus: true, id: "firstname_yomiForm", placeholder: "例）たなか", required: true
+      = f.text_field :last_name_yomi, autofocus: true, id: "lastname_yomiForm", placeholder: "例）たろう", required: true
+      .userSignUp__email
+        %p#text メールアドレス
+        %p#mark 必須
+      = f.email_field :email, placeholder: " PC・携帯どちらでも可", id: "emailForm", required: true
+      .userSignUp__pwForm
+        %p#text パスワード
+        %p#mark 必須
+      = f.password_field :password, autocomplete: "off", placeholder: " パスワード（７文字以上）", id: "pwForm", required: true, minlength: '7', maxlength: '30'
+      
+      .userSignUp__pwForm
+        %p#text パスワード(再入力)
+        %p#mark 必須
+      = f.password_field :password_confirmation, autocomplete: "off", placeholder: " パスワード再入力", id: "pwForm", required: true, minlength: '7', maxlength: '30'
+
+      .userSignUp__birthday
+        %p#text 生年月日
+        %p#mark 必須
+      = f.text_field :birthday, placeholder: "2020", id: "birthForm", required: true
+
+      .userSignUp__postalCode
+        %p#text 郵便番号
+        %p#mark 必須
+      = f.text_field :postal_code, autofocus: true, id: "postalCode", placeholder: "123-4567"
+
+      .userSignUp__prefecture
+        %p#text 都道府県
+        %p#mark 必須
+      = f.text_field :prefecture, autofocus: true, id: "prefecture", placeholder: "和歌山県"
+
+      .userSignUp__city
+        %p#text 市町村
+        %p#mark 必須
+      = f.text_field :city, autofocus: true, id: "city", placeholder: "和歌山市"
+      
+      .userSignUp__address
+        %p#text 番地
+        %p#mark 必須
+      = f.text_field :address, autofocus: true, id: "address", placeholder: "市町村以降を入力してください"
+
+      .userSignUp__room
+        %p#text 建物名
+        %p#mark2 任意
+      = f.text_field :room, autofocus: true, id: "room", placeholder: "建物名・部屋番号を入力してください"
+
+      .userSignUp__tel
+        %p#text 電話番号
+        %p#mark 必須
+      = f.text_field :tel, autofocus: true, id: "tel", placeholder: "09012345678"
+
+      .userSignUp__rank
+        %p#text 会員区分
+        %p#mark 必須
+      = f.collection_select :rank_id, Rank.all, :id, :name, prompt: "選択してください"
+
+      .userSignUp__success
+        = f.submit "登録する", id: "sendBtn"
+      .userSignUp__topGo

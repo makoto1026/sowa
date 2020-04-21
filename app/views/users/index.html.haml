@@ -1,0 +1,16 @@
+.userIndex
+  .userIndex__head
+    %p この機能は使用できません
+  .userIndex__main
+    無料会員様は「タクシーを呼ぶ」のみ可能です。 
+    他機能をご利用されたい場合は、有料会員に
+    アップグレードしてください。
+
+    .userIndex__main__back
+      .userIndex__main__back__link
+        =link_to "トップページへ戻る", root_path
+      .userIndex__main__back__link
+        =link_to "有料会員にアップグレードする", root_path
+  
+  .userIndex__bottom
+    = render 'layouts/footer'

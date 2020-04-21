@@ -1,0 +1,21 @@
+.userIndex {
+  &__head {
+    @include head();
+    background-color: red;
+  }
+  &__main {
+    height: calc(100vh - 120px);
+    padding: 30px;
+    &__back {
+      margin-top: 70px;
+      text-align: center;
+      &__link {
+        margin-bottom: 30px;
+        a {
+          color: blue;
+        }
+      }
+    }
+  }
+
+}

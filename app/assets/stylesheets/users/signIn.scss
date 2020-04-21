@@ -1,0 +1,116 @@
+@media screen and (max-width: 375px) {
+
+  #mark {
+  @include mark();
+  }
+
+  #mark2 {
+  @include mark();
+  background-color: gray;
+  }
+
+  #text {
+    font-weight: 600;
+  }
+
+  #janle {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #878787;
+  }
+
+  .userSignMain {
+    font-size: 14px;
+    padding: 30px;
+  }
+
+  .error_msg {
+    width: 100%;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #f8d8da;
+    color: #75242b;
+    border-radius: 3px;
+    border: 1px solid #f9c6cc;
+    position: relative;
+    span.no-icon {
+      position: absolute;
+      right: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .userSign {
+    &__head {
+      height: 150px;
+      font-size: 22px;
+      font-weight: 600;
+      text-align: center;
+      margin: auto;
+      p {
+        margin: 20px;
+      }
+      a {
+        color: blue;
+      }
+    }
+    &__google {
+      display: flex;
+      height: 40px;
+      width: 100%;
+      &--btn {
+        position: relative;
+        margin: auto;
+        width: 100%;
+        #google {
+          border-radius: 5px;
+          padding: 18px 15%;
+          text-decoration: none;
+          font-size: 17px;
+          color: blue;
+          font-weight: 600;
+          border: 3px solid blue;
+        }
+        i {
+          font-size: 25px;
+          z-index: 1;
+          color: blue;
+          position: absolute;
+          left: 6%;
+        }
+      }
+    }
+    &__email {
+      @include janle();
+    }
+    #emailForm{
+      @include formBox();
+    }
+    &__pwForm {
+      @include janle();    
+    }
+    #pwForm {
+      @include formBox();
+    }
+    &__success {
+      padding: 20px 0;
+      // text-align: center;
+      #sendBtn {
+        height: 50px;
+        width: 100%;
+        background-color: #3DCACE;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        line-height: 50px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      #loginText {
+        text-decoration: none;
+        color: #3DCACE;
+      }
+    }
+  }
+}
