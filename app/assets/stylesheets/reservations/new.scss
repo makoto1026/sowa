@@ -1,0 +1,8 @@
+.rsNew {
+  &__head {
+    @include head();
+  }
+  &__main {
+    @include main();
+  }
+}

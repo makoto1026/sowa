@@ -63,3 +63,8 @@
   font-size: $font-size;
   font-weight: $font-weight;
 }
+
+@mixin main($height: calc(100vh - 120px), $padding: 30px) {
+  height: $height;
+  padding: $padding;
+}
