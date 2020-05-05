@@ -6,8 +6,7 @@
     @include head();
   }
   &__main {
-    height: calc(100vh - 120px);
-    padding: 30px;
+    @include main();
     &__btn {
       height: 30px;
       width: 50%;

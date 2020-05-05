@@ -1,0 +1,15 @@
+.rsNew
+  .rsNew__head
+    %p タクシー予約
+  =form_for @reservation do |f|
+    .rsNew__main
+      .rsNew__main__date
+        = f.date_field :datetime, placeholder: "日付を選択してください"
+      .rsNew__main__place
+        = f.text_field :place, id: "formBox", placeholder: "ご指定場所を入力してください"
+      .rsNew__main__taxiType
+        %p ご希望のタクシータイプ
+      = f.collection_select :taxi_id, Taxi.all, :id, :name, prompt: "選択してください", class: "input"
+      .rsNew__main__btn
+        = f.submit "配車予約する", id: "btn"
+        = link_to "トップページ", root_path
