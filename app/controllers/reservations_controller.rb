@@ -13,10 +13,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  def new
-    @reservation = Reservation.new
-  end
-
   def destroy
   end
 

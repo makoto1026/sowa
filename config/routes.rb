@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :helps
   resources :reservations
+  resources :events
   resources :users
 
 end
